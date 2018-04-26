@@ -17,7 +17,7 @@ THEME_ROOT=${0:A:h}
 if [[ -z $COLOR_THEME ]]; then
   source "${THEME_ROOT}/color/blue.zsh"
 else
-  source "${THEME_ROOT}/color/${COLOR_THEME}.zsh"
+  source "${THEME_ROOT}/color/${TRUNGHAI95_COLOR_THEME}.zsh"
 fi
 
 ### Segment drawing
@@ -73,7 +73,7 @@ prompt_end() {
 # Each component will draw itself, and hide itself if no information needs to be shown
 
 prompt_time() {
-  if [[ $TIME_12HR == true ]]; then
+  if [[ $TRUNGHAI95_TIME_12HR == true ]]; then
     prompt_segment $TIME_BG $TIME_FG %D{%r}
   else
     prompt_segment $TIME_BG $TIME_FG %D{%T}
