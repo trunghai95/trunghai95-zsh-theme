@@ -10,42 +10,14 @@
 # uses changed in 2012, and older versions will display incorrectly,
 # in confusing ways.
 
-### Components color
-# Default color theme: red
-TIME_BG=088
-TIME_FG=254
-CONTEXT_BG=202
-CONTEXT_FG=232
-GIT_BG=238
-GIT_FG=226
-GIT_DIRTY_BG=253
-GIT_DIRTY_FG=016
-DIR_BG=214
-DIR_FG=232
+THEME_ROOT=${0:A:h}
 
-if [[ $COLOR_THEME == "blue" ]]; then
-  TIME_BG=018
-  TIME_FG=254
-  CONTEXT_BG=026
-  CONTEXT_FG=254
-  GIT_BG=238
-  GIT_FG=051
-  GIT_DIRTY_BG=253
-  GIT_DIRTY_FG=016
-  DIR_BG=045
-  DIR_FG=019
-fi
-if [[ $COLOR_THEME == "green" ]]; then
-  TIME_BG=022
-  TIME_FG=254
-  CONTEXT_BG=034
-  CONTEXT_FG=232
-  GIT_BG=238
-  GIT_FG=154
-  GIT_DIRTY_BG=253
-  GIT_DIRTY_FG=016
-  DIR_BG=082
-  DIR_FG=232
+# Load color theme
+# Default: blue
+if [[ -z $COLOR_THEME ]]; then
+  source "${THEME_ROOT}/color/blue.zsh"
+else
+  source "${THEME_ROOT}/color/${COLOR_THEME}.zsh"
 fi
 
 ### Segment drawing
